@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# MarkItWeTime
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple personal time management tool that focuses on **time invested** rather than task completion.
 
-Currently, two official plugins are available:
+## Philosophy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Traditional productivity systems obsess over checking off tasks. This creates paralysis when facing large projects or complex life areas where "done" is hard to define.
 
-## React Compiler
+MarkItWeTime flips the script: instead of tracking what you finish, track **time spent** on areas that matter.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Why this works:**
+- **Removes paralysis** - No need to define perfect tasks. Just show up and work.
+- **Enables parallel progress** - Balance multiple life areas (work, study, health, creative projects) without guilt.
+- **Context switching as rest** - Mix pomodoro blocks from different areas. Switching contexts provides mental rest while staying productive.
+- **Bite-sized commitment** - 25 minutes is approachable. Big projects become manageable when you're just doing "one more block."
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Areas** - Create categories for different parts of your life (work, study, art, fitness, etc.)
+- **Pomodoro timer** - 25 min work / 5 min rest cycles
+- **Time goals** - Set daily pomodoro targets per area
+- **Progress tracking** - See time invested and pomodoros completed
+- **Notifications** - Browser alerts when phases complete
+- **Persistence** - Data saved locally in your browser
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Usage
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Create areas for things you want to invest time in
+2. Set pomodoro goals (how many 25-min blocks per day?)
+3. Select an area and start the timer
+4. Work until the bell. Take a break.
+5. Switch areas for variety, or keep going.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Live App
+
+**https://markitwetime.vercel.app**
+
+## Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React + TypeScript + Vite + Tailwind CSS + Zustand
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+
+MIT
