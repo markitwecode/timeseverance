@@ -44,4 +44,4 @@ All core features implemented:
 - Full area management (add/edit/delete/reset)
 - Dark mode UI
 - localStorage persistence
-- **Deployed to Vercel**: https://markitwetime.vercel.app
+- **Deployed to Vercel**: https://timeseverance.vercel.app

@@ -33,7 +33,7 @@ MarkItWeTime flips the script: instead of tracking what you finish, track **time
 
 ## Live App
 
-**https://markitwetime.vercel.app**
+**https://timeseverance.vercel.app**
 
 ## Development
 
