@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { Area } from '../types'
 
 type AddAreaModalProps = {
@@ -10,8 +10,18 @@ type AddAreaModalProps = {
 }
 
 export function AddAreaModal({ isOpen, onClose, onSubmit, editingArea, onUpdate }: AddAreaModalProps) {
-  const [name, setName] = useState(editingArea?.name ?? '')
-  const [goal, setGoal] = useState(editingArea?.goalPomodoros?.toString() ?? '4')
+  const [name, setName] = useState('')
+  const [goal, setGoal] = useState('4')
+
+  useEffect(() => {
+    if (editingArea) {
+      setName(editingArea.name)
+      setGoal(editingArea.goalPomodoros.toString())
+    } else {
+      setName('')
+      setGoal('4')
+    }
+  }, [editingArea])
 
   if (!isOpen) return null
 
